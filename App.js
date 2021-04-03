@@ -17,6 +17,7 @@ export default function App() {
       />
       <TouchableHighlight
         underlayColor={'#999'}
+        activeOpacity={0.2}
         onPress={() => {
           setSibmit(text)
           alert('texto enviado con exito')
