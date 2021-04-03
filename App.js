@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Dimensions, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Dimensions, TouchableWithoutFeedback, ScrollView } from 'react-native';
 
 //const {width, height } = Dimensions.get('window');
 export default function App() {
@@ -8,23 +8,189 @@ export default function App() {
   const [sibmit, setSibmit] = useState('');
   return (
     <View style={styles.container}>
-      <Text>Text: {sibmit}</Text>
-      <TextInput 
-        style={styles.input} 
-        placeholder='Escribe aqui'
-        onChangeText={t => setText(t)}
-        defaultValue={text}
-      />
-      <TouchableWithoutFeedback
-        style={styles.TouchableOpacity}
-        onPress={() => {
-          setSibmit(text)
-          alert('texto enviado con exito')
-        }}
-      ><View style={styles.view}>
-          <Text>Aceptar</Text>
-        </View></TouchableWithoutFeedback>
-      <StatusBar />
+      <ScrollView style={styles.scrollView}>
+        <Text>Text: {sibmit}</Text>
+        <Text>Text: {sibmit}</Text>
+
+        <TextInput 
+          style={styles.input} 
+          placeholder='Escribe aqui'
+          onChangeText={t => setText(t)}
+          defaultValue={text}
+        />
+        <TouchableWithoutFeedback
+          style={styles.TouchableOpacity}
+          onPress={() => {
+            setSibmit(text)
+            alert('texto enviado con exito')
+          }}
+        ><View style={styles.view}>
+            <Text>Aceptar</Text>
+          </View></TouchableWithoutFeedback>
+          <Text>Text: {sibmit}</Text>
+        <Text>Text: {sibmit}</Text>
+        
+        <TextInput 
+          style={styles.input} 
+          placeholder='Escribe aqui'
+          onChangeText={t => setText(t)}
+          defaultValue={text}
+        />
+        <TouchableWithoutFeedback
+          style={styles.TouchableOpacity}
+          onPress={() => {
+            setSibmit(text)
+            alert('texto enviado con exito')
+          }}
+        ><View style={styles.view}>
+            <Text>Aceptar</Text>
+          </View></TouchableWithoutFeedback>
+          <Text>Text: {sibmit}</Text>
+        <Text>Text: {sibmit}</Text>
+        
+        <TextInput 
+          style={styles.input} 
+          placeholder='Escribe aqui'
+          onChangeText={t => setText(t)}
+          defaultValue={text}
+        />
+        <TouchableWithoutFeedback
+          style={styles.TouchableOpacity}
+          onPress={() => {
+            setSibmit(text)
+            alert('texto enviado con exito')
+          }}
+        ><View style={styles.view}>
+            <Text>Aceptar</Text>
+          </View></TouchableWithoutFeedback>
+          <Text>Text: {sibmit}</Text>
+        <Text>Text: {sibmit}</Text>
+        
+        <TextInput 
+          style={styles.input} 
+          placeholder='Escribe aqui'
+          onChangeText={t => setText(t)}
+          defaultValue={text}
+        />
+        <TouchableWithoutFeedback
+          style={styles.TouchableOpacity}
+          onPress={() => {
+            setSibmit(text)
+            alert('texto enviado con exito')
+          }}
+        ><View style={styles.view}>
+            <Text>Aceptar</Text>
+          </View></TouchableWithoutFeedback>
+          <Text>Text: {sibmit}</Text>
+        <Text>Text: {sibmit}</Text>
+        
+        <TextInput 
+          style={styles.input} 
+          placeholder='Escribe aqui'
+          onChangeText={t => setText(t)}
+          defaultValue={text}
+        />
+        <TouchableWithoutFeedback
+          style={styles.TouchableOpacity}
+          onPress={() => {
+            setSibmit(text)
+            alert('texto enviado con exito')
+          }}
+        ><View style={styles.view}>
+            <Text>Aceptar</Text>
+          </View></TouchableWithoutFeedback>
+          <Text>Text: {sibmit}</Text>
+        <Text>Text: {sibmit}</Text>
+        
+        <TextInput 
+          style={styles.input} 
+          placeholder='Escribe aqui'
+          onChangeText={t => setText(t)}
+          defaultValue={text}
+        />
+        <TouchableWithoutFeedback
+          style={styles.TouchableOpacity}
+          onPress={() => {
+            setSibmit(text)
+            alert('texto enviado con exito')
+          }}
+        ><View style={styles.view}>
+            <Text>Aceptar</Text>
+          </View></TouchableWithoutFeedback>
+          <Text>Text: {sibmit}</Text>
+        <Text>Text: {sibmit}</Text>
+        
+        <TextInput 
+          style={styles.input} 
+          placeholder='Escribe aqui'
+          onChangeText={t => setText(t)}
+          defaultValue={text}
+        />
+        <TouchableWithoutFeedback
+          style={styles.TouchableOpacity}
+          onPress={() => {
+            setSibmit(text)
+            alert('texto enviado con exito')
+          }}
+        ><View style={styles.view}>
+            <Text>Aceptar</Text>
+          </View></TouchableWithoutFeedback>
+          <Text>Text: {sibmit}</Text>
+        <Text>Text: {sibmit}</Text>
+        
+        <TextInput 
+          style={styles.input} 
+          placeholder='Escribe aqui'
+          onChangeText={t => setText(t)}
+          defaultValue={text}
+        />
+        <TouchableWithoutFeedback
+          style={styles.TouchableOpacity}
+          onPress={() => {
+            setSibmit(text)
+            alert('texto enviado con exito')
+          }}
+        ><View style={styles.view}>
+            <Text>Aceptar</Text>
+          </View></TouchableWithoutFeedback>
+          <Text>Text: {sibmit}</Text>
+        <Text>Text: {sibmit}</Text>
+        
+        <TextInput 
+          style={styles.input} 
+          placeholder='Escribe aqui'
+          onChangeText={t => setText(t)}
+          defaultValue={text}
+        />
+        <TouchableWithoutFeedback
+          style={styles.TouchableOpacity}
+          onPress={() => {
+            setSibmit(text)
+            alert('texto enviado con exito')
+          }}
+        ><View style={styles.view}>
+            <Text>Aceptar</Text>
+          </View></TouchableWithoutFeedback>
+          <Text>Text: {sibmit}</Text>
+        <Text>Text: {sibmit}</Text>
+        
+        <TextInput 
+          style={styles.input} 
+          placeholder='Escribe aqui'
+          onChangeText={t => setText(t)}
+          defaultValue={text}
+        />
+        <TouchableWithoutFeedback
+          style={styles.TouchableOpacity}
+          onPress={() => {
+            setSibmit(text)
+            alert('texto enviado con exito')
+          }}
+        ><View style={styles.view}>
+            <Text>Aceptar</Text>
+          </View></TouchableWithoutFeedback>
+        <StatusBar />
+      </ScrollView>
     </View>
   );
 }
@@ -52,4 +218,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  scrollView: {
+    width: Dimensions.get('window').width,
+  }
 });
