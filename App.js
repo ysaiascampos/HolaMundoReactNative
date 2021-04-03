@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Dimensions, TouchableNativeFeedback } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Dimensions, TouchableOpacity } from 'react-native';
 
 //const {width, height } = Dimensions.get('window');
 export default function App() {
@@ -15,23 +15,30 @@ export default function App() {
         onChangeText={t => setText(t)}
         defaultValue={text}
       />
-      <TouchableNativeFeedback
-        background={TouchableNativeFeedback.Ripple('#00f', true)}
+      <TouchableOpacity
+        style={styles.TouchableOpacity}
         onPress={() => {
           setSibmit(text)
           alert('texto enviado con exito')
         }}
       ><View style={styles.view}>
           <Text>Aceptar</Text>
-        </View></TouchableNativeFeedback>
+        </View></TouchableOpacity>
       <StatusBar />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  TouchableOpacity: {
+    backgroundColor: '#EEE'
+  },
   view: {
-    flex: 0.5,
+    height: 40,
+    width: 300,
+    alignItems: 'center',
+    justifyContent: 'center',
+    //flex: 0.5,
   },
   input: {
     height: 40,
