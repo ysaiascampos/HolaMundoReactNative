@@ -1,21 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Image, View } from 'react-native';
+import { StyleSheet, ImageBackground,Text, View } from 'react-native';
 
 export default function App() {
   
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.photo}
-        source={require('./assets/icon.png')}
-      />
-      <Image
+      <ImageBackground
         style={styles.photo}
         source={{
           uri: 'https://placekitten.com/200/200'
         }}
-      />
+      >
+        <Text>hola sss</Text>
+      </ImageBackground>
       
     </View>
   );
