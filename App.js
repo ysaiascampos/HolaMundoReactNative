@@ -1,14 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, ActivityIndicator, View } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 
 export default function App() {
   
   return (
     <View style={styles.container}>
-      <ActivityIndicator 
-        size="small"
-        color="#0000FF"
+      <Image
+        style={styles.photo}
+        source={require('./assets/icon.png')}
+      />
+      <Image
+        style={styles.photo}
+        source={{
+          uri: 'https://placekitten.com/200/200'
+        }}
       />
       
     </View>
@@ -16,6 +22,10 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  photo: {
+    height: 200,
+    width: 200,
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
