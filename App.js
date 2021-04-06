@@ -1,44 +1,53 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect } from 'react';
-import { Alert, Dimensions, StyleSheet, Text, View } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
-import * as Location from 'expo-location';
-import Constants from 'expo-constants';
+import { Dimensions, StyleSheet, Text, View, Button } from 'react-native';
+import { Camera } from 'expo-camera';
 
 
 export default function App() {
-  const [locacion, setLocacion] = useState({});
-  const buscaLocation = async () => {
-    const { status } = await Location.requestPermissionsAsync();
-    if(status !== 'granted') {
-      return Alert.alert('No tenemos los permisos necesarios para acceder a la location');
-    }
-    let location = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
-    setLocacion(location);
+  const [permisos, setPermisos] = useState(null);
+  const [tipo, setTipo] = useState(Camera.Constants.Type.back)
+  const getPermisos = async () => {
+    const { status } = await Camera.requestPermissionsAsync()
+    setPermisos(status == 'granted')
+    console.log(status);
   }
   useEffect(() => {
-    buscaLocation()
-  },[])
+    getPermisos()
+  })
+
+  if(permisos === null) {
+    return <View style={styles.container}>
+      <Text>Esperando permisos...</Text>
+    </View>
+  }
+  if(permisos === false) {
+    return <View style={styles.container}>
+      <Text>No tenemos acceso a la camara</Text>
+    </View>
+  }
+
   return (
     <View style={styles.container}>
-      <MapView style={styles.maps} >
-        {locacion.coords?
-        <Marker 
-          coordinate={locacion.coords}
-          title="Titulo"
-          description="Descripcion del punto"
+      <Camera style={styles.camera} type={tipo}>
+        
+        <Button 
+          title="Voltear"
+          onPress={() => {
+            const { front, back } = Camera.Constants.Type
+            const nuevoTipo = tipo === back ? front : back
+            setTipo(nuevoTipo)
+          }}
         />
-        : null
-        }
-      </MapView>
+      </Camera>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  maps: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+  camera: {
+    width: '100%',
+    height: '100%',
   },
   container: {
     flex: 1,
