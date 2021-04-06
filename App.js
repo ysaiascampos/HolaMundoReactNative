@@ -1,27 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import { Alert, Dimensions, StyleSheet, Text, View } from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import Constants from 'expo-constants';
 
 
 export default function App() {
+  const [locacion, setLocacion] = useState({});
   const buscaLocation = async () => {
     const { status } = await Location.requestPermissionsAsync();
     if(status !== 'granted') {
       return Alert.alert('No tenemos los permisos necesarios para acceder a la location');
     }
-
-    const location = await Location.getCurrentPositionAsync({accuracy: 6})
-    console.log(location);
+    let location = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
+    setLocacion(location);
   }
   useEffect(() => {
     buscaLocation()
-  })
+  },[])
   return (
     <View style={styles.container}>
-      <MapView style={styles.maps} />
+      <MapView style={styles.maps} >
+        {locacion.coords?
+        <Marker 
+          coordinate={locacion.coords}
+          title="Titulo"
+          description="Descripcion del punto"
+        />
+        : null
+        }
+      </MapView>
     </View>
   );
 }
